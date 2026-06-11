@@ -1197,13 +1197,13 @@ module.exports = {
         created_at: {type: 'dateTime', nullable: false},
         updated_at: {type: 'dateTime', nullable: false},
         deleted_at: {type: 'dateTime', nullable: true},
-        automation_id: {type: 'string', maxlength: 24, nullable: false, references: 'automations.id'},
+        automation_id: {type: 'string', maxlength: 24, nullable: false, references: 'automations.id', cascadeDelete: true},
         type: {type: 'string', maxlength: 50, nullable: false, validations: {isIn: [['wait', 'send_email']]}}
     },
     automation_action_revisions: {
         id: {type: 'string', maxlength: 24, nullable: false, primary: true},
         created_at: {type: 'dateTime', nullable: false},
-        action_id: {type: 'string', maxlength: 24, nullable: false, references: 'automation_actions.id'},
+        action_id: {type: 'string', maxlength: 24, nullable: false, references: 'automation_actions.id', cascadeDelete: true},
         wait_hours: {type: 'integer', nullable: true, unsigned: true},
         email_subject: {type: 'string', maxlength: 300, nullable: true},
         email_lexical: {type: 'text', maxlength: 1000000000, fieldtype: 'long', nullable: true},
@@ -1213,8 +1213,8 @@ module.exports = {
         ]
     },
     automation_action_edges: {
-        source_action_id: {type: 'string', maxlength: 24, nullable: false, references: 'automation_actions.id'},
-        target_action_id: {type: 'string', maxlength: 24, nullable: false, references: 'automation_actions.id'},
+        source_action_id: {type: 'string', maxlength: 24, nullable: false, references: 'automation_actions.id', cascadeDelete: true},
+        target_action_id: {type: 'string', maxlength: 24, nullable: false, references: 'automation_actions.id', cascadeDelete: true},
         '@@PRIMARY_KEY@@': ['source_action_id', 'target_action_id']
     },
     automation_runs: {
