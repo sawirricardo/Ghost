@@ -50,8 +50,8 @@ catalog:
   '@tryghost/api-framework': 3.2.3
   '@tryghost/color-utils': 0.2.19
   '@tryghost/custom-fonts': 1.0.11
-  '@tryghost/debug': 2.2.1
-  '@tryghost/domain-events': 3.2.3
+  '@tryghost/debug': 2.2.2
+  '@tryghost/domain-events': 3.2.4
   '@tryghost/helpers': 1.1.106
   '@tryghost/kg-clean-basic-html': 4.3.2
   '@tryghost/kg-converters': 1.2.2
